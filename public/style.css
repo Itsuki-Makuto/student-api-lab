@@ -4,9 +4,8 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #f4f6f8;
-  color: #222;
+  color: #36c54a;
 }
 
 .container {
@@ -27,7 +26,7 @@ h1 {
 }
 
 p {
-  color: #666;
+  color: #fefdfd;
 }
 
 ul {
@@ -43,7 +42,7 @@ a {
   display: block;
   padding: 14px;
   background: #f0f2f5;
-  color: #333;
+  color: #b51111;
   text-decoration: none;
   border-radius: 8px;
 }
