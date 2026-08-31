@@ -31,8 +31,6 @@ const server = http.createServer(async (req, res) => {
             <h1>Student API</h1>
             <p>Welcome to the Student API Server.</p>
 
-            <h2>Available Endpoints</h2>
-
             <ul>
               <li>
                 <a href="/api/students">GET /api/students</a>
