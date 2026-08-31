@@ -18,13 +18,53 @@ const server = http.createServer(async (req, res) => {
       });
 
       res.end(`
-        <h1>Student API</h1>
-        <p>Welcome to the Student API Server.</p>
-        <ul>
-          <li>GET /api/students</li>
-          <li>GET /api/count</li>
-        </ul>
+        <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Student API</title>
+        <link rel="stylesheet" href="/style.css">
+      </head>
+
+      <body>
+        <div class="container">
+          <div class="card">
+            <h1>Student API</h1>
+            <p>Welcome to the Student API Server.</p>
+
+            <h2>Available Endpoints</h2>
+
+            <ul>
+              <li>
+                <a href="/api/students">GET /api/students</a>
+              </li>
+
+              <li>
+                <a href="/api/count">GET /api/count</a>
+              </li>
+
+              <li>
+                <a href="/api/students/random">
+                  GET /api/students/random
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </body>
+    </html>
       `);
+
+    } else if (req.url === "/style.css") {
+        const css = await fs.readFile(
+        path.join(__dirname, "public", "style.css"),
+        "utf-8"
+        );
+
+        res.writeHead(200, {
+            "Content-Type": "text/css"
+        });
+
+  res.end(css);
 
     } else if (req.url === "/api/students") {
       res.writeHead(200, {
